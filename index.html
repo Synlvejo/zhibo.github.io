@@ -52,19 +52,19 @@
     .name-block .zh { font-size: 13px; color: var(--sub); margin-top: 2px; }
     .name-block .role { font-size: 12px; color: var(--sub); margin-top: 10px; line-height: 1.5; }
 
-    .side-section { border-top: 1px solid var(--rule); padding-top: 18px; width: 100%; }
+    .side-section { border-top: 1px solid var(--rule); padding-top: 18px; width: 100%; text-align: center; }
     .side-section .label {
       font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
       color: #888; margin-bottom: 8px;
     }
-    .contact { font-size: 12.5px; font-family: var(--mono); color: #3a3a3a; line-height: 1.7; word-break: break-all; }
+    .contact { font-size: 12.5px; font-family: var(--mono); color: #3a3a3a; line-height: 1.7; word-break: break-all; text-align: center; }
     .contact .at { color: #aaa; }
-    .side-links { margin-top: 12px; font-size: 13px; }
+    .side-links { margin-top: 12px; font-size: 13px; text-align: center; }
     .side-links .sep { color: #bbb; margin: 0 6px; }
 
     nav.toc a {
       display: block; padding: 5px 0; color: #3a3a3a; font-size: 13px;
-      text-decoration: none; border-bottom: 0; letter-spacing: 0.02em;
+      text-decoration: none; border-bottom: 0; letter-spacing: 0.02em; text-align: center;
     }
     nav.toc a::before { content: "§"; color: var(--accent); margin-right: 8px; font-family: var(--mono); font-size: 11px; }
 
@@ -171,7 +171,7 @@
         <div class="contact">zhibo.xuan<br /><span class="at">[at]</span> buaa.edu.cn</div>
         <div class="side-links">
           <a href="mailto:zhibo.xuan@buaa.edu.cn">Email</a><span class="sep">·</span><a href="#">Scholar</a><br />
-          <a href="#">GitHub</a><span class="sep">·</span><a href="#">ORCID</a>
+          <a href="#">GitHub</a><span class="sep">·</span><a href="https://orcid.org/0009-0003-6811-0548">ORCID</a>
         </div>
       </div>
       <nav class="toc side-section" style="border-top: 1px solid var(--rule); padding-top: 14px;">
@@ -238,48 +238,35 @@
         <h2 class="sec"><span class="num">05</span><span>Publications</span><span class="rule"></span></h2>
         <div id="pub-list-recent">
           <article class="pub">
-  <div class="pub-num">[9]</div>
-  <div class="pub-body">
-    <h3 class="pub-title">Profiling and Optimizing Mixed-Precision Attention Kernels on Modern GPUs</h3>
-    <p class="pub-authors"><span class="me">Zhibo Xuan</span>, <span>[Coauthor A]</span>, <span>[Coauthor B]</span>, <span>Hailong Yang</span></p>
-    <p class="pub-venue"><em>Under review, 2026</em><span class="badges"><a class="badge-link" href="#" aria-label="PDF"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>PDF</span></a><a class="badge-link" href="#" aria-label="Database"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg><span>DB</span></a></span></p>
-    <p class="pub-note">· Identifies three latency tail sources in FlashAttention-style kernels and proposes a scheduling fix that recovers ~14% end-to-end throughput.</p>
-  </div>
-</article>
-          <article class="pub">
   <div class="pub-num">[8]</div>
   <div class="pub-body">
-    <h3 class="pub-title">A Roofline-Style Model for LLM Decoding on Heterogeneous Accelerators</h3>
-    <p class="pub-authors"><span class="me">Zhibo Xuan</span>, <span>[Coauthor C]</span>, <span>Hailong Yang</span></p>
-    <p class="pub-venue"><em>SC '25, 2025</em><span class="badges"><span class="badge-ccf">CCF-A</span><a class="badge-link" href="#" aria-label="PDF"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>PDF</span></a><a class="badge-link" href="https://dl.acm.org/" aria-label="Database"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg><span>DB</span></a></span></p>
-    <p class="pub-note">· A first-principles performance model that predicts decoding throughput within 8% across four hardware platforms.</p>
+    <h3 class="pub-title">Identifying Performance Inefficiencies of Parallel Program With Spatial and Temporal Trace Analysis</h3>
+    <p class="pub-authors"><span class="me">Zhibo Xuan</span>, Xin Sun, Xin You, Hailong Yang, Zhongzhi Luan, Yi Liu, Depei Qian</p>
+    <p class="pub-venue"><em>IEEE Transactions on Parallel and Distributed Systems, 2025</em><span class="badges"><a class="badge-link" href="https://doi.org/10.1109/TPDS.2025.3566735" aria-label="DOI"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>DOI</span></a></span></p>
   </div>
 </article>
           <article class="pub">
   <div class="pub-num">[7]</div>
   <div class="pub-body">
-    <h3 class="pub-title">Cache-Aware Sparse Attention Scheduling for Long-Context Inference</h3>
-    <p class="pub-authors"><span>[Coauthor D]</span>, <span class="me">Zhibo Xuan</span>, <span>Hailong Yang</span></p>
-    <p class="pub-venue"><em>ICS '25, 2025</em><span class="badges"><span class="badge-ccf">CCF-B</span><a class="badge-link" href="#" aria-label="PDF"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>PDF</span></a><a class="badge-link" href="https://dl.acm.org/" aria-label="Database"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg><span>DB</span></a></span></p>
-    <p class="pub-note">· A reordering of sparse-attention compute that reduces L2 misses by 2.1× on A100, with no accuracy change.</p>
+    <h3 class="pub-title">SimTrace: Exploiting Spatial and Temporal Sampling for Large-Scale Performance Analysis</h3>
+    <p class="pub-authors"><span class="me">Zhibo Xuan</span>, Xin You, Tianyu Feng, Hailong Yang, Zhongzhi Luan, Yi Liu, Depei Qian</p>
+    <p class="pub-venue"><em>ACM Transactions on Architecture and Code Optimization, 2025</em><span class="badges"><a class="badge-link" href="https://doi.org/10.1145/3720544" aria-label="DOI"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>DOI</span></a></span></p>
   </div>
 </article>
           <article class="pub">
   <div class="pub-num">[6]</div>
   <div class="pub-body">
-    <h3 class="pub-title">An Empirical Study of Memory Bandwidth Bottlenecks in Transformer Training</h3>
-    <p class="pub-authors"><span class="me">Zhibo Xuan</span>, <span>Hailong Yang</span></p>
-    <p class="pub-venue"><em>TPDS, 2024</em><span class="badges"><span class="badge-ccf">CCF-A</span><a class="badge-link" href="#" aria-label="PDF"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>PDF</span></a><a class="badge-link" href="https://ieeexplore.ieee.org/" aria-label="Database"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg><span>DB</span></a></span></p>
-    <p class="pub-note">· An empirical analysis of bandwidth saturation across attention, MLP and norm layers; informs the design of GVARP.</p>
+    <h3 class="pub-title">GNNPerf: Towards Effective Performance Profiling and Analysis Across GNN Frameworks</h3>
+    <p class="pub-authors">Kejie Ma, Hailong Yang, Zizheng Zhang, Xin You, <span class="me">Zhibo Xuan</span>, Qingxiao Sun, Zhongzhi Luan, Yi Liu, Depei Qian</p>
+    <p class="pub-venue"><em>IPDPS '25, 2025</em><span class="badges"><a class="badge-link" href="https://doi.org/10.1109/ipdps64566.2025.00079" aria-label="DOI"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>DOI</span></a></span></p>
   </div>
 </article>
           <article class="pub">
   <div class="pub-num">[5]</div>
   <div class="pub-body">
-    <h3 class="pub-title">Communication-Efficient Tensor Parallelism for Trillion-Scale Models</h3>
-    <p class="pub-authors"><span>[Coauthor E]</span>, <span class="me">Zhibo Xuan</span>, <span>[Coauthor F]</span>, <span>Hailong Yang</span></p>
-    <p class="pub-venue"><em>HPCA '24, 2024</em><span class="badges"><span class="badge-ccf">CCF-A</span><a class="badge-link" href="#" aria-label="PDF"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>PDF</span></a><a class="badge-link" href="https://ieeexplore.ieee.org/" aria-label="Database"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg><span>DB</span></a></span></p>
-    <p class="pub-note">· Hides 73% of cross-node tensor-parallel traffic behind compute via a layered overlap schedule.</p>
+    <h3 class="pub-title">Retrospection on the Performance Analysis Tools for Large-Scale HPC Programs</h3>
+    <p class="pub-authors"><span class="me">Zhibo Xuan</span>, Xin You, Hailong Yang, Mingzhen Li, Zhongzhi Luan, Yi Liu, Depei Qian</p>
+    <p class="pub-venue"><em>HiPC '24, 2024</em><span class="badges"><a class="badge-link" href="https://doi.org/10.1109/hipc62374.2024.00013" aria-label="DOI"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>DOI</span></a></span></p>
   </div>
 </article>
         </div>
@@ -287,37 +274,33 @@
           <article class="pub">
   <div class="pub-num">[4]</div>
   <div class="pub-body">
-    <h3 class="pub-title">GVARP: Profiling Performance Variance for Large-Scale GPU Workloads</h3>
-    <p class="pub-authors"><span class="me">Zhibo Xuan</span>, <span>[Coauthor G]</span>, <span>Hailong Yang</span></p>
-    <p class="pub-venue"><em>SC '23, 2023</em><span class="badges"><span class="badge-ccf">CCF-A</span><a class="badge-link" href="#" aria-label="PDF"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>PDF</span></a><a class="badge-link" href="https://dl.acm.org/" aria-label="Database"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg><span>DB</span></a></span></p>
-    <p class="pub-note">· Lightweight profiler that pinpoints the sources of run-to-run performance variance in HPC GPU jobs.</p>
+    <h3 class="pub-title">GVARP: Detecting Performance Variance on Large-Scale Heterogeneous Systems</h3>
+    <p class="pub-authors">Xin You, <span class="me">Zhibo Xuan</span>, Hailong Yang, Zhongzhi Luan, Yi Liu, Depei Qian</p>
+    <p class="pub-venue"><em>SC '24, 2024</em><span class="badges"><a class="badge-link" href="https://doi.org/10.1109/SC41406.2024.00063" aria-label="DOI"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>DOI</span></a></span></p>
   </div>
 </article>
           <article class="pub">
   <div class="pub-num">[3]</div>
   <div class="pub-body">
-    <h3 class="pub-title">TrivialSpy: Identifying Trivial Computations for Performance Tuning</h3>
-    <p class="pub-authors"><span class="me">Zhibo Xuan</span>, <span>[Coauthor H]</span>, <span>Hailong Yang</span></p>
-    <p class="pub-venue"><em>ICS '23, 2023</em><span class="badges"><span class="badge-ccf">CCF-B</span><a class="badge-link" href="#" aria-label="PDF"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>PDF</span></a><a class="badge-link" href="https://dl.acm.org/" aria-label="Database"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg><span>DB</span></a></span></p>
-    <p class="pub-note">· Detects redundant / trivial computations at instruction granularity to guide programmer-driven tuning.</p>
+    <h3 class="pub-title">gGMED: Towards GPU Accelerated Geometric Modeling Evaluation and Derivative Processes</h3>
+    <p class="pub-authors"><span class="me">Zhibo Xuan</span>, Hailong Yang, Peng Wang, Xin Sun, Jie Hao, Siyuan Duan, Yiming Shi, Zhongzhi Luan, Depei Qian</p>
+    <p class="pub-venue"><em>Lecture Notes in Computer Science, 2024</em><span class="badges"><a class="badge-link" href="https://doi.org/10.1007/978-981-97-0798-0_22" aria-label="DOI"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>DOI</span></a></span></p>
   </div>
 </article>
           <article class="pub">
   <div class="pub-num">[2]</div>
   <div class="pub-body">
-    <h3 class="pub-title">EasyScale: Elastic Training with Consistent Convergence</h3>
-    <p class="pub-authors"><span>[Coauthor I]</span>, <span class="me">Zhibo Xuan</span>, <span>Hailong Yang</span></p>
-    <p class="pub-venue"><em>SC '22, 2022</em><span class="badges"><span class="badge-ccf">CCF-A</span><a class="badge-link" href="#" aria-label="PDF"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>PDF</span></a><a class="badge-link" href="https://dl.acm.org/" aria-label="Database"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg><span>DB</span></a></span></p>
-    <p class="pub-note">· Makes elastic training reproducible — same convergence trajectory regardless of resource scaling events.</p>
+    <h3 class="pub-title">Accelerating Big Data Application by Eliminating Redundancy on Hadoop Cluster</h3>
+    <p class="pub-authors">Ke Lei, Shitong Du, Xin You, <span class="me">Zhibo Xuan</span>, Haoyu Kong, Hailong Yang, Jingya Shang, Zhongzhi Xiao, Zheng Wu, Zhongzhi Luan, Depei Qian</p>
+    <p class="pub-venue"><em>ICPADS '23, 2023</em><span class="badges"><a class="badge-link" href="https://doi.org/10.1109/ICPADS60453.2023.00114" aria-label="DOI"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>DOI</span></a></span></p>
   </div>
 </article>
           <article class="pub">
   <div class="pub-num">[1]</div>
   <div class="pub-body">
-    <h3 class="pub-title">RecServe: Sparse-Embedding Acceleration for Recommendation Inference</h3>
-    <p class="pub-authors"><span class="me">Zhibo Xuan</span>, <span>[Coauthor J]</span>, <span>Hailong Yang</span></p>
-    <p class="pub-venue"><em>IPDPS '22, 2022</em><span class="badges"><span class="badge-ccf">CCF-B</span><a class="badge-link" href="#" aria-label="PDF"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>PDF</span></a><a class="badge-link" href="https://ieeexplore.ieee.org/" aria-label="Database"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg><span>DB</span></a></span></p>
-    <p class="pub-note">· GPU-side sparse-embedding cache that lifts recommendation inference throughput by 3.4× on production traces.</p>
+    <h3 class="pub-title">PowerSpector: Towards Energy Efficiency with Calling-Context-Aware Profiling</h3>
+    <p class="pub-authors">Xin You, Hailong Yang, <span class="me">Zhibo Xuan</span>, Zhongzhi Luan, Depei Qian</p>
+    <p class="pub-venue"><em>IPDPS '22, 2022</em><span class="badges"><a class="badge-link" href="https://doi.org/10.1109/IPDPS53621.2022.00126" aria-label="DOI"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>DOI</span></a></span></p>
   </div>
 </article>
         </div>
@@ -362,7 +345,7 @@
         } else {
           rest.removeAttribute('hidden');
           btn.setAttribute('aria-expanded', 'true');
-          btn.textContent = '↑ Show recent 5 only';
+          btn.textContent = '↑ Show recent 4 only';
         }
       });
     })();
