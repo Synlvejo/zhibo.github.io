@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zhibo Xuan — Academic Homepage</title>
+  <meta name="description" content="Postdoc and lecturer at Beihang University working at the intersection of computer architecture and ML systems — HPC, performance analysis &amp; tuning tools, deep-learning systems, and LLM training &amp; inference." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+
+  <style>
+    :root {
+      --accent: #9b2c2c;
+      --ink: #1a1a1a;
+      --sub: #555;
+      --muted: #999;
+      --rule: #d8d4cc;
+      --bg: #fafaf7;
+      --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+      --sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--bg); color: var(--ink); font-family: var(--sans);
+      font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 64px 32px 96px; }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); }
+    a:hover { border-bottom-color: var(--accent); }
+
+    /* Header */
+    header.hero { display: flex; gap: 32px; align-items: flex-start; margin-bottom: 32px; }
+    header.hero .text { flex: 1; min-width: 0; }
+    h1 { font-size: 30px; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
+    h1 .zh { color: var(--sub); font-weight: 400; font-size: 22px; }
+    .hero p { margin: 10px 0 0; }
+    .hero .meta { color: var(--sub); }
+    .hero .email { font-family: var(--mono); font-size: 14px; color: var(--sub); }
+    .hero .email .at { color: #aaa; }
+    .hero .links { font-size: 14px; }
+    .hero .links span.sep { color: #bbb; margin: 0 10px; }
+
+    .portrait {
+      width: 140px; height: 140px; border-radius: 50%; flex-shrink: 0;
+      background: repeating-linear-gradient(135deg, #ece7dd 0 6px, #e3ddd0 6px 12px);
+      border: 1px solid var(--rule);
+      display: flex; align-items: center; justify-content: center;
+      color: #9a9080; font-size: 10px; font-family: var(--mono); letter-spacing: 0.05em;
+      overflow: hidden;
+    }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; }
+
+    section { margin-bottom: 40px; }
+    section.bio p { margin: 0 0 14px; text-wrap: pretty; }
+
+    h2 {
+      font-size: 15px; font-weight: 600; letter-spacing: 0.04em;
+      text-transform: uppercase; color: var(--ink);
+      margin: 0 0 16px; padding-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* Two-column lists (date + body) */
+    ul.dl { list-style: none; padding: 0; margin: 0; }
+    ul.dl li { display: grid; grid-template-columns: 92px 1fr; gap: 16px; margin-bottom: 12px; font-size: 14.5px; align-items: baseline; }
+    ul.dl .key { color: var(--sub); font-family: var(--mono); font-size: 13px; }
+
+    .research-item { margin-bottom: 16px; }
+    .research-item .t { font-weight: 600; margin-bottom: 2px; }
+    .research-item .b { margin: 0; color: var(--sub); font-size: 14.5px; text-wrap: pretty; }
+
+    /* Publications */
+    .pub { margin-bottom: 22px; text-wrap: pretty; }
+    .pub-title { font-weight: 700; color: var(--ink); font-size: 15.5px; margin: 0 0 4px; line-height: 1.4; }
+    .pub-authors { margin: 0 0 4px; color: var(--sub); font-size: 13.5px; line-height: 1.5; }
+    .pub-authors .me { color: var(--ink); }
+    .pub-venue { margin: 0; font-size: 13.5px; line-height: 1.6; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; color: var(--sub); }
+    .pub-venue em { font-style: italic; }
+    .pub-note { margin: 4px 0 0; color: #666; font-size: 13.5px; text-wrap: pretty; }
+
+    .badges { display: inline-flex; gap: 6px; align-items: center; flex-wrap: wrap; vertical-align: middle; }
+    .badge-ccf {
+      display: inline-flex; align-items: center; padding: 2px 8px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.04em;
+      color: #fff; background: var(--accent); border-radius: 4px;
+      font-family: var(--sans); line-height: 1.4; white-space: nowrap;
+    }
+    .badge-link {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 1px 8px; font-size: 11.5px; color: #444;
+      background: #fff; border: 1px solid var(--rule); border-radius: 4px;
+      text-decoration: none; line-height: 1.5;
+    }
+    .badge-link:hover { border-color: #b0a99a; color: var(--ink); }
+
+    .pub-toggle {
+      appearance: none; background: transparent; border: 0; padding: 6px 0;
+      color: var(--accent); font: inherit; font-size: 13px; cursor: pointer;
+      border-bottom: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+    }
+
+    /* Education / Experience rows */
+    .row { display: grid; grid-template-columns: 60px 1fr; gap: 16px; margin-bottom: 12px; font-size: 14.5px; align-items: baseline; }
+    .row .key { font-weight: 600; }
+    .row .val .note { color: var(--sub); }
+
+    .service-row { display: grid; grid-template-columns: 180px 1fr; gap: 16px; margin-bottom: 10px; font-size: 14.5px; }
+    .service-row .key { font-weight: 600; }
+    .service-row .val { color: var(--sub); }
+
+    footer.foot {
+      margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--rule);
+      color: var(--muted); font-size: 12px; font-family: var(--mono);
+      display: flex; justify-content: space-between;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .wrap { padding: 32px 20px 64px; }
+      header.hero { flex-direction: column-reverse; align-items: flex-start; }
+      .portrait { width: 100px; height: 100px; }
+      h1 { font-size: 26px; }
+      ul.dl li { grid-template-columns: 80px 1fr; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="text">
+        <h1>Zhibo Xuan <span class="zh">(宣智博)</span></h1>
+        <p class="meta">Postdoc &amp; Lecturer · School of Computer Science and Engineering, Beihang University</p>
+        <p class="email">zhibo.xuan <span class="at">[at]</span> buaa.edu.cn</p>
+        <p class="links">
+          <a href="mailto:zhibo.xuan@buaa.edu.cn">Email</a><span class="sep">/</span>
+          <a href="#">Google Scholar</a><span class="sep">/</span>
+          <a href="#">GitHub</a><span class="sep">/</span>
+          <a href="#">ORCID</a>
+        </p>
+      </div>
+      <!-- Replace src below with your real photo. Keep filename simple. -->
+      <div class="portrait" aria-label="Portrait">
+        <!-- <img src="me.jpg" alt="Zhibo Xuan" /> -->
+        portrait
+      </div>
+    </header>
+
+    <section class="bio">
+      <p>I am a postdoc and lecturer at the School of Computer Science and Engineering, Beihang University, where I received my Ph.D. in Computer Science under the supervision of Prof. Hailong Yang. I also received my B.S. in Computer Science from Beihang University.</p>
+      <p>My research lies at the intersection of computer architecture and machine-learning systems. I work on high-performance computing, performance analysis and tuning tools, deep-learning systems, and training &amp; inference systems for large language models — in particular, how the next generation of AI workloads should reshape the hardware and software stacks beneath them.</p>
+      <p>Some of my recent work includes profiling tools (GVARP, TrivialSpy) for diagnosing performance bottlenecks, variance, and inefficiencies, and systems for elastic training and sparse-embedding acceleration (EasyScale, RecServe).</p>
+    </section>
+
+    <section>
+      <h2>News</h2>
+      <ul class="dl">
+        <li><span class="key">Apr 2026</span><span>Our paper on [LLM kernel scheduling] was accepted to [Conference '26].</span></li>
+        <li><span class="key">Feb 2026</span><span>Gave a talk at [Workshop / Seminar Name] on profiling memory bandwidth for transformer inference.</span></li>
+        <li><span class="key">Dec 2025</span><span>Started a research internship at [Industry Lab], working on [topic].</span></li>
+        <li><span class="key">Sep 2025</span><span>Joined the [Lab Name] as a research assistant under Prof. [Advisor].</span></li>
+        <li><span class="key">Jun 2025</span><span>Received the [Outstanding Undergraduate Thesis] award from [University].</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Research Interests</h2>
+      <div class="research-item"><div class="t">High-performance computing</div><p class="b">Systems and runtime optimization for large-scale scientific workloads.</p></div>
+      <div class="research-item"><div class="t">Performance analysis &amp; tuning tools</div><p class="b">Profiling methodologies for diagnosing performance bottlenecks, variance, and inefficiencies (e.g., GVARP, TrivialSpy).</p></div>
+      <div class="research-item"><div class="t">Deep learning systems</div><p class="b">Training/inference optimization, elastic training, sparse-embedding acceleration (e.g., EasyScale, RecServe).</p></div>
+      <div class="research-item"><div class="t">Training &amp; inference systems for LLMs</div><p class="b">Efficient LLM serving and training on heterogeneous hardware.</p></div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="row"><span class="key">Ph.D.</span><span class="val">Computer Science, Beihang University <span class="note">— advisor: Prof. Hailong Yang</span></span></div>
+      <div class="row"><span class="key">B.S.</span><span class="val">Computer Science, Beihang University</span></div>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div style="margin-bottom: 10px; font-size: 14.5px;"><strong>Postdoc, Lecturer</strong><span style="color: var(--sub);">, School of Computer Science and Engineering, Beihang University</span></div>
+    </section>
+
+    <section>
+      <h2>Publications</h2>
+      <div id="pub-list-recent">
+        <article class="pub">
+  <h3 class="pub-title">Profiling and Optimizing Mixed-Precision Attention Kernels on Modern GPUs</h3>
+  <p class="pub-authors"><span class="me">Zhibo Xuan</span>, <span>[Coauthor A]</span>, <span>[Coauthor B]</span>, <span>Hailong Yang</span></p>
+  <p class="pub-venue"><em>Under review, 2026</em><span class="badges"><a class="badge-link" href="#" aria-label="PDF"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>PDF</span></a><a class="badge-link" href="#" aria-label="Database"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg><span>DB</span></a></span></p>
+  <p class="pub-note">· Identifies three latency tail sources in FlashAttention-style kernels and proposes a scheduling fix that recovers ~14% end-to-end throughput.</p>
+</article>
+        <article class="pub">
+  <h3 class="pub-title">A Roofline-Style Model for LLM Decoding on Heterogeneous Accelerators</h3>
+  <p class="pub-authors"><span class="me">Zhibo Xuan</span>, <span>[Coauthor C]</span>, <span>Hailong Yang</span></p>
+  <p class="pub-venue"><em>SC '25, 2025</em><span class="badges"><span class="badge-ccf">CCF-A</span><a class="badge-link" href="#" aria-label="PDF"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>PDF</span></a><a class="badge-link" href="https://dl.acm.org/" aria-label="Database"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg><span>DB</span></a></span></p>
+  <p class="pub-note">· A first-principles performance model that predicts decoding throughput within 8% across four hardware platforms.</p>
+</article>
+        <article class="pub">
+  <h3 class="pub-title">Cache-Aware Sparse Attention Scheduling for Long-Context Inference</h3>
+  <p class="pub-authors"><span>[Coauthor D]</span>, <span class="me">Zhibo Xuan</span>, <span>Hailong Yang</span></p>
+  <p class="pub-venue"><em>ICS '25, 2025</em><span class="badges"><span class="badge-ccf">CCF-B</span><a class="badge-link" href="#" aria-label="PDF"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>PDF</span></a><a class="badge-link" href="https://dl.acm.org/" aria-label="Database"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg><span>DB</span></a></span></p>
+  <p class="pub-note">· A reordering of sparse-attention compute that reduces L2 misses by 2.1× on A100, with no accuracy change.</p>
+</article>
+        <article class="pub">
+  <h3 class="pub-title">An Empirical Study of Memory Bandwidth Bottlenecks in Transformer Training</h3>
+  <p class="pub-authors"><span class="me">Zhibo Xuan</span>, <span>Hailong Yang</span></p>
+  <p class="pub-venue"><em>TPDS, 2024</em><span class="badges"><span class="badge-ccf">CCF-A</span><a class="badge-link" href="#" aria-label="PDF"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>PDF</span></a><a class="badge-link" href="https://ieeexplore.ieee.org/" aria-label="Database"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg><span>DB</span></a></span></p>
+  <p class="pub-note">· An empirical analysis of bandwidth saturation across attention, MLP and norm layers; informs the design of GVARP.</p>
+</article>
+        <article class="pub">
+  <h3 class="pub-title">Communication-Efficient Tensor Parallelism for Trillion-Scale Models</h3>
+  <p class="pub-authors"><span>[Coauthor E]</span>, <span class="me">Zhibo Xuan</span>, <span>[Coauthor F]</span>, <span>Hailong Yang</span></p>
+  <p class="pub-venue"><em>HPCA '24, 2024</em><span class="badges"><span class="badge-ccf">CCF-A</span><a class="badge-link" href="#" aria-label="PDF"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>PDF</span></a><a class="badge-link" href="https://ieeexplore.ieee.org/" aria-label="Database"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg><span>DB</span></a></span></p>
+  <p class="pub-note">· Hides 73% of cross-node tensor-parallel traffic behind compute via a layered overlap schedule.</p>
+</article>
+      </div>
+      <div id="pub-list-rest" hidden>
+        <article class="pub">
+  <h3 class="pub-title">GVARP: Profiling Performance Variance for Large-Scale GPU Workloads</h3>
+  <p class="pub-authors"><span class="me">Zhibo Xuan</span>, <span>[Coauthor G]</span>, <span>Hailong Yang</span></p>
+  <p class="pub-venue"><em>SC '23, 2023</em><span class="badges"><span class="badge-ccf">CCF-A</span><a class="badge-link" href="#" aria-label="PDF"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>PDF</span></a><a class="badge-link" href="https://dl.acm.org/" aria-label="Database"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg><span>DB</span></a></span></p>
+  <p class="pub-note">· Lightweight profiler that pinpoints the sources of run-to-run performance variance in HPC GPU jobs.</p>
+</article>
+        <article class="pub">
+  <h3 class="pub-title">TrivialSpy: Identifying Trivial Computations for Performance Tuning</h3>
+  <p class="pub-authors"><span class="me">Zhibo Xuan</span>, <span>[Coauthor H]</span>, <span>Hailong Yang</span></p>
+  <p class="pub-venue"><em>ICS '23, 2023</em><span class="badges"><span class="badge-ccf">CCF-B</span><a class="badge-link" href="#" aria-label="PDF"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>PDF</span></a><a class="badge-link" href="https://dl.acm.org/" aria-label="Database"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg><span>DB</span></a></span></p>
+  <p class="pub-note">· Detects redundant / trivial computations at instruction granularity to guide programmer-driven tuning.</p>
+</article>
+        <article class="pub">
+  <h3 class="pub-title">EasyScale: Elastic Training with Consistent Convergence</h3>
+  <p class="pub-authors"><span>[Coauthor I]</span>, <span class="me">Zhibo Xuan</span>, <span>Hailong Yang</span></p>
+  <p class="pub-venue"><em>SC '22, 2022</em><span class="badges"><span class="badge-ccf">CCF-A</span><a class="badge-link" href="#" aria-label="PDF"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>PDF</span></a><a class="badge-link" href="https://dl.acm.org/" aria-label="Database"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg><span>DB</span></a></span></p>
+  <p class="pub-note">· Makes elastic training reproducible — same convergence trajectory regardless of resource scaling events.</p>
+</article>
+        <article class="pub">
+  <h3 class="pub-title">RecServe: Sparse-Embedding Acceleration for Recommendation Inference</h3>
+  <p class="pub-authors"><span class="me">Zhibo Xuan</span>, <span>[Coauthor J]</span>, <span>Hailong Yang</span></p>
+  <p class="pub-venue"><em>IPDPS '22, 2022</em><span class="badges"><span class="badge-ccf">CCF-B</span><a class="badge-link" href="#" aria-label="PDF"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>PDF</span></a><a class="badge-link" href="https://ieeexplore.ieee.org/" aria-label="Database"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg><span>DB</span></a></span></p>
+  <p class="pub-note">· GPU-side sparse-embedding cache that lifts recommendation inference throughput by 3.4× on production traces.</p>
+</article>
+      </div>
+      <button class="pub-toggle" id="pub-toggle" aria-expanded="false" aria-controls="pub-list-rest">↓ Show 4 earlier publications</button>
+    </section>
+
+    <section>
+      <h2>Awards</h2>
+      <ul class="dl">
+        <li><span class="key">2025</span><span>National Postdoctoral Innovation Talents Support Program (博士后创新人才支持计划)</span></li>
+        <li><span class="key">2025</span><span>ACM SIGHPC China Outstanding Ph.D. Dissertation Award (ACM SIGHPC 中国优秀博士论文)</span></li>
+        <li><span class="key">2024</span><span>CCF Architecture Ph.D. Dissertation Incentive Program (CCF 体系结构博士学位论文激励计划)</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Academic Service</h2>
+      <div class="service-row"><span class="key">External Reviewer</span><span class="val">[ASPLOS '26], [MLSys '26], [SC '25]</span></div>
+      <div class="service-row"><span class="key">Student Volunteer</span><span class="val">[ISCA '25]</span></div>
+      <div class="service-row"><span class="key">Teaching Assistant</span><span class="val">[Computer Organization], [Parallel Computing] — [University], 2024–2025</span></div>
+    </section>
+
+    <footer class="foot">
+      <span>Last updated May 2026.</span>
+      <span>Hosted on GitHub Pages.</span>
+    </footer>
+  </div>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('pub-toggle');
+      if (!btn) return;
+      var rest = document.getElementById('pub-list-rest');
+      var n = 4;
+      btn.addEventListener('click', function() {
+        var open = rest.hasAttribute('hidden') === false;
+        if (open) {
+          rest.setAttribute('hidden', '');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.textContent = '↓ Show ' + n + ' earlier publications';
+        } else {
+          rest.removeAttribute('hidden');
+          btn.setAttribute('aria-expanded', 'true');
+          btn.textContent = '↑ Show recent 5 only';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
