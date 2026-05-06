@@ -98,8 +98,8 @@
     .row .key { font-weight: 600; }
     .row .val .note { color: var(--sub); }
 
-    .pub { display: grid; grid-template-columns: 44px 1fr; gap: 14px; margin-bottom: 22px; text-wrap: pretty; }
-    .pub-num { font-family: var(--mono); font-size: 12px; color: #999; padding-top: 3px; }
+    .pub { margin-bottom: 22px; text-wrap: pretty; }
+    .co-first { color: #5b9bd5; font-style: italic; font-size: 12px; margin-left: 4px; }
     .pub-title { font-weight: 700; color: var(--ink); font-size: 15.5px; margin: 0 0 4px; line-height: 1.4; }
     .pub-authors { margin: 0 0 4px; color: var(--sub); font-size: 13.5px; line-height: 1.5; }
     .pub-authors .me { color: var(--ink); }
@@ -126,7 +126,7 @@
       appearance: none; background: transparent; border: 0; padding: 6px 0;
       color: var(--accent); font: inherit; font-size: 13px; cursor: pointer;
       border-bottom: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
-      margin-left: 58px;
+      margin-left: 0;
     }
 
     .service-row { display: grid; grid-template-columns: 180px 1fr; gap: 18px; margin-bottom: 11px; font-size: 14.5px; }
@@ -148,8 +148,7 @@
       }
       main { padding: 32px 20px 64px; }
       h1 { font-size: 28px; }
-      .pub { grid-template-columns: 32px 1fr; gap: 10px; }
-      .pub-toggle { margin-left: 42px; }
+      .pub-toggle { margin-left: 0; }
     }
   </style>
 </head>
@@ -237,7 +236,6 @@
         <h2 class="sec"><span class="num">05</span><span>Publications</span><span class="rule"></span></h2>
         <div id="pub-list-recent">
           <article class="pub">
-  <div class="pub-num">[8]</div>
   <div class="pub-body">
     <h3 class="pub-title">Identifying Performance Inefficiencies of Parallel Program With Spatial and Temporal Trace Analysis</h3>
     <p class="pub-authors"><span class="me">Zhibo Xuan</span>, Xin Sun, Xin You, Hailong Yang, Zhongzhi Luan, Yi Liu, Depei Qian</p>
@@ -246,7 +244,6 @@
   </div>
 </article>
           <article class="pub">
-  <div class="pub-num">[7]</div>
   <div class="pub-body">
     <h3 class="pub-title">SimTrace: Exploiting Spatial and Temporal Sampling for Large-Scale Performance Analysis</h3>
     <p class="pub-authors"><span class="me">Zhibo Xuan</span>, Xin You, Tianyu Feng, Hailong Yang, Zhongzhi Luan, Yi Liu, Depei Qian</p>
@@ -255,7 +252,14 @@
   </div>
 </article>
           <article class="pub">
-  <div class="pub-num">[6]</div>
+  <div class="pub-body">
+    <h3 class="pub-title">GVARP: Detecting Performance Variance on Large-Scale Heterogeneous Systems</h3>
+    <p class="pub-authors">Xin You<sup>*</sup>, <span class="me">Zhibo Xuan</span><sup>*</sup>, Hailong Yang, Zhongzhi Luan, Yi Liu, Depei Qian<span class="co-first">* Equal contribution</span></p>
+    <p class="pub-venue"><em>SC '24, 2024</em><span class="badges"><span class="badge-ccf">CCF-A</span><a class="badge-link" href="https://doi.org/10.1109/SC41406.2024.00063" aria-label="DOI"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>DOI</span></a></span></p>
+    <p class="pub-note">· Lightweight profiler that pinpoints the root causes of run-to-run performance variance on large-scale heterogeneous GPU systems.</p>
+  </div>
+</article>
+          <article class="pub">
   <div class="pub-body">
     <h3 class="pub-title">GNNPerf: Towards Effective Performance Profiling and Analysis Across GNN Frameworks</h3>
     <p class="pub-authors">Kejie Ma, Hailong Yang, Zizheng Zhang, Xin You, <span class="me">Zhibo Xuan</span>, Qingxiao Sun, Zhongzhi Luan, Yi Liu, Depei Qian</p>
@@ -264,54 +268,65 @@
   </div>
 </article>
           <article class="pub">
-  <div class="pub-num">[5]</div>
   <div class="pub-body">
-    <h3 class="pub-title">Retrospection on the Performance Analysis Tools for Large-Scale HPC Programs</h3>
-    <p class="pub-authors"><span class="me">Zhibo Xuan</span>, Xin You, Hailong Yang, Mingzhen Li, Zhongzhi Luan, Yi Liu, Depei Qian</p>
-    <p class="pub-venue"><em>HiPC '24, 2024</em><span class="badges"><span class="badge-ccf">CCF-C</span><a class="badge-link" href="https://doi.org/10.1109/hipc62374.2024.00013" aria-label="DOI"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>DOI</span></a></span></p>
-    <p class="pub-note">· A systematic survey and retrospective analysis of performance analysis tools for large-scale HPC programs.</p>
+    <h3 class="pub-title">Exploiting Synchronization-aware Transformer for Aligning Large-Scale MPI Traces</h3>
+    <p class="pub-authors"><span class="me">Zhibo Xuan</span>, Xin You, Hailong Yang, Haoran Kong, Jingqi Chen, Tianyu Feng, Zhongzhi Luan, Yi Liu, Depei Qian</p>
+    <p class="pub-venue"><em>Frontiers of Computer Science, 2025</em><span class="badges"><span class="badge-ccf">CCF-B</span></span></p>
+    <p class="pub-note">· Leverages synchronization-aware transformers to efficiently align large-scale MPI traces for performance analysis.</p>
+  </div>
+</article>
+          <article class="pub">
+  <div class="pub-body">
+    <h3 class="pub-title">Exploiting Transformer-Based Static Binary Analysis for Identifying Inefficient Locks</h3>
+    <p class="pub-authors"><span class="me">Zhibo Xuan</span>, Xin You, Hailong Yang, Jingqi Chen, Zhongzhi Luan, Yi Liu, Depei Qian</p>
+    <p class="pub-venue"><em>NPC '25, 2025</em><span class="badges"><span class="badge-ccf">CCF-C</span></span></p>
+    <p class="pub-note">· A transformer-based static binary analysis tool that detects inefficient lock usage and contention in multithreaded programs.</p>
   </div>
 </article>
         </div>
         <div id="pub-list-rest" hidden>
           <article class="pub">
-  <div class="pub-num">[4]</div>
   <div class="pub-body">
-    <h3 class="pub-title">GVARP: Detecting Performance Variance on Large-Scale Heterogeneous Systems</h3>
-    <p class="pub-authors">Xin You, <span class="me">Zhibo Xuan</span>, Hailong Yang, Zhongzhi Luan, Yi Liu, Depei Qian</p>
-    <p class="pub-venue"><em>SC '24, 2024</em><span class="badges"><span class="badge-ccf">CCF-A</span><a class="badge-link" href="https://doi.org/10.1109/SC41406.2024.00063" aria-label="DOI"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>DOI</span></a></span></p>
-    <p class="pub-note">· Lightweight profiler that pinpoints the root causes of run-to-run performance variance on large-scale heterogeneous GPU systems.</p>
+    <h3 class="pub-title">Hotspy: Identifying Performance Hotspot with Graph Neural Network Based Static Analysis</h3>
+    <p class="pub-authors">Da Huo, Xin You, <span class="me">Zhibo Xuan</span>, Hailong Yang, Zhongzhi Luan, Depei Qian</p>
+    <p class="pub-venue"><em>CCF Transactions on High Performance Computing, 2025</em><span class="badges"></span></p>
+    <p class="pub-note">· Uses graph neural networks for static analysis to identify performance hotspots without runtime profiling overhead.</p>
   </div>
 </article>
           <article class="pub">
-  <div class="pub-num">[3]</div>
+  <div class="pub-body">
+    <h3 class="pub-title">Retrospection on the Performance Analysis Tools for Large-Scale HPC Programs</h3>
+    <p class="pub-authors"><span class="me">Zhibo Xuan</span>, Xin You, Hailong Yang, Mingzhen Li, Zhongzhi Luan, Yi Liu, Depei Qian</p>
+    <p class="pub-venue"><em>HiPC '24, 2024</em><span class="badges"><span class="badge-ccf">CCF-C</span></span></p>
+    <p class="pub-note">· A systematic survey and retrospective analysis of performance analysis tools for large-scale HPC programs.</p>
+  </div>
+</article>
+          <article class="pub">
   <div class="pub-body">
     <h3 class="pub-title">gGMED: Towards GPU Accelerated Geometric Modeling Evaluation and Derivative Processes</h3>
     <p class="pub-authors"><span class="me">Zhibo Xuan</span>, Hailong Yang, Peng Wang, Xin Sun, Jie Hao, Siyuan Duan, Yiming Shi, Zhongzhi Luan, Depei Qian</p>
-    <p class="pub-venue"><em>Lecture Notes in Computer Science (APPT), 2024</em><span class="badges"><span class="badge-ccf">CCF-C</span><a class="badge-link" href="https://doi.org/10.1007/978-981-97-0798-0_22" aria-label="DOI"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>DOI</span></a></span></p>
+    <p class="pub-venue"><em>Lecture Notes in Computer Science (APPT), 2024</em><span class="badges"><span class="badge-ccf">CCF-C</span></span></p>
     <p class="pub-note">· Accelerates geometric modeling evaluation and derivative computation on GPUs for CAD/CAE applications.</p>
   </div>
 </article>
           <article class="pub">
-  <div class="pub-num">[2]</div>
   <div class="pub-body">
     <h3 class="pub-title">Accelerating Big Data Application by Eliminating Redundancy on Hadoop Cluster</h3>
     <p class="pub-authors">Ke Lei, Shitong Du, Xin You, <span class="me">Zhibo Xuan</span>, Haoyu Kong, Hailong Yang, Jingya Shang, Zhongzhi Xiao, Zheng Wu, Zhongzhi Luan, Depei Qian</p>
-    <p class="pub-venue"><em>ICPADS '23, 2023</em><span class="badges"><span class="badge-ccf">CCF-C</span><a class="badge-link" href="https://doi.org/10.1109/ICPADS60453.2023.00114" aria-label="DOI"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>DOI</span></a></span></p>
+    <p class="pub-venue"><em>ICPADS '23, 2023</em><span class="badges"><span class="badge-ccf">CCF-C</span></span></p>
     <p class="pub-note">· Identifies and eliminates redundant computation in Hadoop-based big data pipelines to improve cluster throughput.</p>
   </div>
 </article>
           <article class="pub">
-  <div class="pub-num">[1]</div>
   <div class="pub-body">
     <h3 class="pub-title">PowerSpector: Towards Energy Efficiency with Calling-Context-Aware Profiling</h3>
     <p class="pub-authors">Xin You, Hailong Yang, <span class="me">Zhibo Xuan</span>, Zhongzhi Luan, Depei Qian</p>
-    <p class="pub-venue"><em>IPDPS '22, 2022</em><span class="badges"><span class="badge-ccf">CCF-B</span><a class="badge-link" href="https://doi.org/10.1109/IPDPS53621.2022.00126" aria-label="DOI"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>DOI</span></a></span></p>
+    <p class="pub-venue"><em>IPDPS '22, 2022</em><span class="badges"><span class="badge-ccf">CCF-B</span></span></p>
     <p class="pub-note">· A calling-context-aware energy profiler that attributes power consumption to code regions for guided optimization.</p>
   </div>
 </article>
         </div>
-        <button class="pub-toggle" id="pub-toggle" aria-expanded="false" aria-controls="pub-list-rest">↓ Show 4 earlier publications</button>
+        <button class="pub-toggle" id="pub-toggle" aria-expanded="false" aria-controls="pub-list-rest">↓ Show 5 earlier publications</button>
       </section>
 
       <section id="awards">
@@ -335,7 +350,7 @@
       var btn = document.getElementById('pub-toggle');
       if (!btn) return;
       var rest = document.getElementById('pub-list-rest');
-      var n = 4;
+      var n = 5;
       btn.addEventListener('click', function() {
         var open = rest.hasAttribute('hidden') === false;
         if (open) {
@@ -345,7 +360,7 @@
         } else {
           rest.removeAttribute('hidden');
           btn.setAttribute('aria-expanded', 'true');
-          btn.textContent = '↑ Show recent 4 only';
+          btn.textContent = '↑ Show recent 6 only';
         }
       });
     })();
