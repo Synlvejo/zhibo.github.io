@@ -68,7 +68,7 @@
     }
     nav.toc a::before { content: "§"; color: var(--accent); margin-right: 8px; font-family: var(--mono); font-size: 11px; }
 
-    main { padding: 64px 64px 96px; max-width: 720px; margin: 0 auto; }
+    main { padding: 64px 80px 96px; max-width: 900px; margin: 0 auto; }
 
     .eyebrow { font-size: 12px; color: var(--sub); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 8px; }
     h1 { font-size: 36px; font-weight: 600; margin: 0; letter-spacing: -0.015em; line-height: 1.15; }
@@ -275,6 +275,8 @@
     <p class="pub-note">· Leverages synchronization-aware transformers to efficiently align large-scale MPI traces for performance analysis.</p>
   </div>
 </article>
+        </div>
+        <div id="pub-list-rest" hidden>
           <article class="pub">
   <div class="pub-body">
     <h3 class="pub-title">Exploiting Transformer-Based Static Binary Analysis for Identifying Inefficient Locks</h3>
@@ -283,8 +285,6 @@
     <p class="pub-note">· A transformer-based static binary analysis tool that detects inefficient lock usage and contention in multithreaded programs.</p>
   </div>
 </article>
-        </div>
-        <div id="pub-list-rest" hidden>
           <article class="pub">
   <div class="pub-body">
     <h3 class="pub-title">Hotspy: Identifying Performance Hotspot with Graph Neural Network Based Static Analysis</h3>
@@ -326,7 +326,7 @@
   </div>
 </article>
         </div>
-        <button class="pub-toggle" id="pub-toggle" aria-expanded="false" aria-controls="pub-list-rest">↓ Show 5 earlier publications</button>
+        <button class="pub-toggle" id="pub-toggle" aria-expanded="false" aria-controls="pub-list-rest">↓ Show 6 earlier publications</button>
       </section>
 
       <section id="awards">
@@ -350,7 +350,7 @@
       var btn = document.getElementById('pub-toggle');
       if (!btn) return;
       var rest = document.getElementById('pub-list-rest');
-      var n = 5;
+      var n = 6;
       btn.addEventListener('click', function() {
         var open = rest.hasAttribute('hidden') === false;
         if (open) {
@@ -360,7 +360,7 @@
         } else {
           rest.removeAttribute('hidden');
           btn.setAttribute('aria-expanded', 'true');
-          btn.textContent = '↑ Show recent 6 only';
+          btn.textContent = '↑ Show recent 5 only';
         }
       });
     })();
